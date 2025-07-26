@@ -139,7 +139,7 @@ for (int i = 0; i < PlainText.Length; i += 2)
             }
         }
     }
-    // Encrypt based on their positions
+
     if (firstRow == secondRow) // Same row
     {
         cipherText += matrix[firstRow, (firstCol + 1) % 5];
@@ -150,7 +150,7 @@ for (int i = 0; i < PlainText.Length; i += 2)
         cipherText += matrix[(firstRow + 1) % 5, firstCol];
         cipherText += matrix[(secondRow + 1) % 5, secondCol];
     }
-    else // Rectangle case
+    else 
     {
         cipherText += matrix[firstRow, secondCol];
         cipherText += matrix[secondRow, firstCol];
@@ -167,7 +167,7 @@ for (int i = 0; i < cipherText.Length; i += 2)
     char secondChar = cipherText[i + 1];
     int firstRow = -1, firstCol = -1;
     int secondRow = -1, secondCol = -1;
-    // Find the position of the characters in the matrix
+
     for (int row = 0; row < 5; row++)
     {
         for (int col = 0; col < 5; col++)
